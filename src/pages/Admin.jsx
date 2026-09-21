@@ -32,13 +32,13 @@ export default function Admin() {
     if (!f) return;
     setFileName(f.name);
     setMsg("");
-    const { rows, errors } = await parseExcel(f);
-    if (errors.length) {
+    const { rows, errors, truncated } = await parseExcel(f);
+    if (!rows.length) {
       setMsg(errors.join("; "));
       setRows([]);
     } else {
       setRows(rows);
-      setMsg(`${rows.length} baris siap. Klik Replace.`);
+      setMsg(`${rows.length} baris siap. Klik Replace.${truncated ? " (Hanya 2000 baris pertama dipakai.)" : ""}`);
     }
   }
 
