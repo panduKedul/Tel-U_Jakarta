@@ -14,20 +14,26 @@ function Cell({ t }) {
   );
 }
 
-export default function TopicTable({ rows, start = 0 }) {
+export default function TopicTable({ rows, start = 0, sortKey, sortDir, onSort }) {
   if (!rows.length) return <p className="text-slate-500 text-center p-6">Tidak ada topik ditemukan.</p>;
+  const arrow = (key) => {
+    if (sortKey !== key) return <span className="text-white/50"> ↕</span>;
+    return sortDir === "asc" ? <span> ▲</span> : <span> ▼</span>;
+  };
+  const th = "p-3";
+  const thSort = th + " cursor-pointer select-none hover:bg-red-800 whitespace-nowrap";
   return (
     <div className="overflow-x-auto">
       <table className="w-full min-w-[1200px] text-slate-800 text-sm">
         <thead>
           <tr className="bg-red-700 text-white text-left">
             <th className="p-3 rounded-tl-xl">Nomor</th>
-            <th className="p-3">Judul Topik</th>
-            <th className="p-3">Latar Belakang</th>
-            <th className="p-3">Masalah</th>
-            <th className="p-3">Target Solusi</th>
-            <th className="p-3">Kode Dosen</th>
-            <th className="p-3 rounded-tr-xl">Ketersediaan</th>
+            <th className={thSort} onClick={() => onSort("judul")}>Judul Topik{arrow("judul")}</th>
+            <th className={th}>Latar Belakang</th>
+            <th className={th}>Masalah</th>
+            <th className={th}>Target Solusi</th>
+            <th className={thSort} onClick={() => onSort("kode_dosen")}>Kode Dosen{arrow("kode_dosen")}</th>
+            <th className={thSort + " rounded-tr-xl"} onClick={() => onSort("ketersediaan")}>Ketersediaan{arrow("ketersediaan")}</th>
           </tr>
         </thead>
         <tbody>

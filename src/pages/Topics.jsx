@@ -26,10 +26,36 @@ export default function Topics() {
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [per, setPer] = useState(20);
+  const [sortKey, setSortKey] = useState(null);
+  const [sortDir, setSortDir] = useState("asc");
 
   const filtered = useMemo(() => filterTopics(topics, q), [q]);
-  const { pages, rows } = paginate(filtered, page, per);
+  const sorted = useMemo(() => {
+    if (!sortKey) return filtered;
+    const arr = [...filtered];
+    arr.sort((a, b) => {
+      const va = String(a[sortKey] || "");
+      const vb = String(b[sortKey] || "");
+      const cmp = va.localeCompare(vb, "id");
+      return sortDir === "asc" ? cmp : -cmp;
+    });
+    return arr;
+  }, [filtered, sortKey, sortDir]);
+  const { pages, rows } = paginate(sorted, page, per);
   const start = (Math.min(page, pages) - 1) * per;
+
+  function onSort(key) {
+    if (sortKey !== key) {
+      setSortKey(key);
+      setSortDir("asc");
+    } else if (sortDir === "asc") {
+      setSortDir("desc");
+    } else {
+      setSortKey(null);
+      setSortDir("asc");
+    }
+    setPage(1);
+  }
 
   return (
     <div className="min-h-screen bg-slate-100">
@@ -47,7 +73,7 @@ export default function Topics() {
       <main className="max-w-7xl mx-auto px-4 py-6">
         <SearchBar value={q} onChange={(v) => { setQ(v); setPage(1); }} />
         <div className="mt-4 bg-white rounded-2xl p-2 border border-slate-200 shadow-sm">
-          <TopicTable rows={rows} start={start} />
+          <TopicTable rows={rows} start={start} sortKey={sortKey} sortDir={sortDir} onSort={onSort} />
         </div>
         <div className="flex flex-wrap justify-between items-center mt-4 gap-3">
           <label className="flex items-center gap-2 text-sm text-slate-600">
