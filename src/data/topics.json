@@ -6,5 +6,13 @@
     "target": "1. Merancang MIMO-GFDM 2x2.\n2. Mengimplementasikan pilot-assisted channel estimation.\n3. Membandingkan LS dan LMMSE.\n4. Membandingkan ZF, MMSE, dan V-BLAST/MMSE-SIC.\n5. Mengevaluasi BER, MSE/NMSE, dan capacity.\n6. Menentukan kombinasi estimator-detector terbaik.",
     "kode_dosen": "AGG",
     "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "Image Compression with Automatic Denoising Feature",
+    "latar": "Perkembangan aplikasi multimedia menyebabkan peningkatan kebutuhan penyimpanan dan transmisi data citra secara efisien. Learned Image Compression (LIC) menjadi salah satu pendekatan yang berkembang karena mampu mempelajari representasi citra secara end-to-end untuk memperoleh efisiensi kompresi yang baik. Namun, keberadaan noise pada citra akibat proses akuisisi, sensor, pencahayaan, maupun transmisi dapat memengaruhi kualitas representasi dan menambah informasi yang kurang relevan untuk dikompresi. Oleh karena itu, diperlukan pendekatan Denoising-Enhanced Learned Image Compression yang mengintegrasikan proses denoising ke dalam sistem kompresi untuk memperoleh representasi citra yang lebih bersih dan efisien, sekaligus mempertahankan kualitas citra setelah proses kompresi.",
+    "masalah": "Bagaimana meningkatkan efisiensi dan kualitas Learned Image Compression pada citra yang mengandung noise, karena noise dapat mengganggu proses pembentukan representasi fitur dan menyebabkan informasi yang kurang relevan ikut dikompresi. Penelitian ini berfokus pada bagaimana mengintegrasikan proses denoising ke dalam sistem kompresi sehingga dapat menghasilkan representasi yang lebih bersih, mengurangi kebutuhan bitrate, dan mempertahankan kualitas citra hasil kompresi.",
+    "target": "1. Meningkatkan efisiensi kompresi citra\n2. Meningkatkan kualitas citra hasil kompresi\n3. Mengurangi bitrate yang diperlukan\n4. Menghasilkan sistem yang robust terhadap noise\n5. Menghasilkan model yang dapat dikembangkan untuk penelitian lanjutan",
+    "kode_dosen": "TAV",
+    "ketersediaan": "Tersedia"
   }
 ]
