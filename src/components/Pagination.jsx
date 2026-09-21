@@ -7,22 +7,25 @@ function pageList(page, pages) {
 export default function Pagination({ page, pages, onChange }) {
   const list = pageList(page, pages);
   const btn = (active) =>
-    "w-8 h-8 rounded-full " + (active ? "bg-white text-blue-700 font-bold" : "bg-white/20 text-white");
+    "w-8 h-8 rounded-lg text-sm " +
+    (active
+      ? "bg-red-700 text-white font-bold"
+      : "bg-white text-slate-700 border border-slate-300 hover:border-red-600 hover:text-red-700");
   let prev = 0;
   return (
     <div className="flex gap-2 items-center">
-      <button onClick={() => onChange(Math.max(1, page - 1))} disabled={page === 1} className="w-8 h-8 rounded-full bg-white/20 text-white disabled:opacity-40" aria-label="prev">‹</button>
+      <button onClick={() => onChange(Math.max(1, page - 1))} disabled={page === 1} className="w-8 h-8 rounded-lg bg-white text-slate-700 border border-slate-300 disabled:opacity-40" aria-label="prev">‹</button>
       {list.map((n) => {
         const gap = prev && n - prev > 1;
         prev = n;
         return (
           <span key={n} className="flex gap-2 items-center">
-            {gap && <span className="text-white/60">…</span>}
+            {gap && <span className="text-slate-400">…</span>}
             <button onClick={() => onChange(n)} className={btn(page === n)}>{n}</button>
           </span>
         );
       })}
-      <button onClick={() => onChange(Math.min(pages, page + 1))} disabled={page === pages} className="w-8 h-8 rounded-full bg-white/20 text-white disabled:opacity-40" aria-label="next">›</button>
+      <button onClick={() => onChange(Math.min(pages, page + 1))} disabled={page === pages} className="w-8 h-8 rounded-lg bg-white text-slate-700 border border-slate-300 disabled:opacity-40" aria-label="next">›</button>
     </div>
   );
 }

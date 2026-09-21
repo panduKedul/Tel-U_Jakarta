@@ -47,36 +47,38 @@ export default function Topics() {
   const start = (Math.min(page, pages) - 1) * per;
 
   return (
-    <div className="min-h-screen bg-cover bg-center" style={{ backgroundImage: "url(/bg-kampus.jpg)" }}>
-      <div className="min-h-screen bg-slate-800/60 p-4">
-        <div className="max-w-7xl mx-auto backdrop-blur-xl bg-white/10 rounded-3xl p-4 md:p-6 border border-white/20">
-          <h1 className="text-white text-center text-xl font-bold">Topik Tugas Akhir</h1>
-          <div className="mt-4">
-            <SearchBar value={q} onChange={(v) => { setQ(v); setPage(1); }} />
-          </div>
-          {err && <p className="text-red-300 mt-3">Gagal muat: {err} <button onClick={() => window.location.reload()} className="underline">Retry</button></p>}
-          {loading && <p className="text-white mt-3">Memuat…</p>}
-          {!loading && (
-            <div className="mt-4 backdrop-blur bg-white/10 rounded-2xl p-2 border border-white/10">
-              <TopicTable rows={rows} start={start} />
-            </div>
-          )}
-          <div className="flex flex-wrap justify-between items-center mt-3 gap-3 text-white">
-            <label className="flex items-center gap-2 text-sm">
-              Tampilkan
-              <select value={per} onChange={(e) => { setPer(Number(e.target.value)); setPage(1); }} className="bg-white/20 rounded-full px-3 py-1 outline-none [&>option]:text-black">
-                <option value={10}>10</option>
-                <option value={20}>20</option>
-                <option value={50}>50</option>
-              </select>
-            </label>
-            <Pagination page={Math.min(page, pages)} pages={pages} onChange={setPage} />
-          </div>
-          <div className="flex justify-center mt-4">
-            <Link to="/" className="bg-white/20 rounded-full px-5 py-2 text-white font-bold">← Kembali</Link>
+    <div className="min-h-screen bg-slate-100">
+      <header className="bg-red-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-stripes" />
+        <div className="relative max-w-7xl mx-auto px-4 py-6 flex items-center gap-4">
+          <Link to="/" className="w-10 h-10 shrink-0 rounded-xl bg-white/15 hover:bg-white/25 transition text-white flex items-center justify-center text-xl font-bold" aria-label="Kembali">←</Link>
+          <div>
+            <h1 className="text-white text-xl font-extrabold">Topik Tugas Akhir</h1>
+            <p className="text-red-200 text-sm">Telkom University Jakarta</p>
           </div>
         </div>
-      </div>
+      </header>
+      <main className="max-w-7xl mx-auto px-4 py-6">
+        <SearchBar value={q} onChange={(v) => { setQ(v); setPage(1); }} />
+        {err && <p className="text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-3 mt-4">Gagal muat: {err} <button onClick={() => window.location.reload()} className="underline font-bold">Retry</button></p>}
+        {loading && <p className="text-slate-500 mt-4">Memuat…</p>}
+        {!loading && (
+          <div className="mt-4 bg-white rounded-2xl p-2 border border-slate-200 shadow-sm">
+            <TopicTable rows={rows} start={start} />
+          </div>
+        )}
+        <div className="flex flex-wrap justify-between items-center mt-4 gap-3">
+          <label className="flex items-center gap-2 text-sm text-slate-600">
+            Tampilkan
+            <select value={per} onChange={(e) => { setPer(Number(e.target.value)); setPage(1); }} className="bg-white border border-slate-300 rounded-lg px-3 py-1.5 outline-none focus:border-red-600 text-slate-800">
+              <option value={10}>10</option>
+              <option value={20}>20</option>
+              <option value={50}>50</option>
+            </select>
+          </label>
+          <Pagination page={Math.min(page, pages)} pages={pages} onChange={setPage} />
+        </div>
+      </main>
     </div>
   );
 }
