@@ -8,7 +8,7 @@ PIVOT 2026-09-21 siang: database + login PENDING. Sumber data = `src/data/topics
 ## Link
 - GitHub: https://github.com/panduKedul/Tel-U_Jakarta.git (branch `master`, push ok)
 - Supabase project ref: `owxptmkxsubgpdozufrh` (https://owxptmkxsubgpdozufrh.supabase.co)
-- Netlify: BELUM import (netlify.toml sudah di repo: build `npm run build`, publish `dist`, SPA redirect ok)
+- Netlify: https://telujakarta-listjudulriset.netlify.app (connect GitHub, auto deploy tiap push master; netlify.toml: build `npm run build`, publish `dist`, SPA redirect ok)
 - Preview lokal: `http://localhost:5175/` (dev server detached, `node vite --port 5175`)
 
 ## Stack
