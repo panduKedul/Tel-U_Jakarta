@@ -10,7 +10,7 @@ export async function parseExcel(file){
   const ws = wb.Sheets[wb.SheetNames[0]];
   if(!ws) return { rows:[], errors:["Sheet kosong"], truncated:false };
   const arr = XLSX.utils.sheet_to_json(ws,{header:1}); if(arr.length<2) return {rows:[],errors:["Sheet kosong"],truncated:false};
-  const head=validateHeader(arr[0]); if(!head.ok) return {rows:[],errors:["Header miss: "+head.missing.join(", ")],truncated:false};;
+  const head=validateHeader(arr[0]); if(!head.ok) return {rows:[],errors:["Header miss: "+head.missing.join(", ")],truncated:false};
   const idx=arr[0].map(x=>String(x ?? "").trim().toLowerCase()); const gi=n=>idx.indexOf(n);
   const rows=[]; let truncated=false;
   for(let i=1;i<arr.length && !truncated;i++){ const r=arr[i]; if(!r||r.every(c=>c==null||c==="")) continue;
