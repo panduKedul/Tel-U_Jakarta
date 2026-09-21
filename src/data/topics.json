@@ -1,0 +1,10 @@
+[
+  {
+    "judul": "Perancangan Sistem MIMO-GFDM dengan Estimasi Kanal dan Advanced Signal Detection untuk Meningkatkan Keandalan Komunikasi Beyond 5G",
+    "latar": "Sifat GFDM yang non-orthogonal membuat sistem rentan terhadap inter-carrier interference (ICI). Dokumen menyebut ZF dan MMSE sebagai receiver yang dapat digunakan untuk mengatasi kondisi tersebut.\nSementara itu, pada bagian lain dokumen digunakan MIMO 2x2, estimasi kanal LS, dan evaluasi berdasarkan MSE, NMSE, SER, BER, serta kapasitas kanal. Penelitian bahkan menyarankan pengembangan menuju LMMSE/LR-LMMSE, MMSE/V-BLAST, serta dimensi MIMO lebih besar.\nCapstone baru dapat mengintegrasikan kedua arah tersebut menjadi MIMO-GFDM.",
+    "masalah": "",
+    "target": "Bagaimana meningkatkan performa MIMO-GFDM ketika kanal tidak diketahui secara sempurna dengan mempertimbangkan:\n- channel estimation;\n- inter-stream interference;\n- ICI dari GFDM;\n- multipath fading;\n- noise.",
+    "kode_dosen": "AGG",
+    "ketersediaan": "Tersedia"
+  }
+]
