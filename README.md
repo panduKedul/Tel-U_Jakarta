@@ -1,69 +1,59 @@
-# Website Ide Riset
+# Website Ide Riset — Telkom University Jakarta
 
-Vite React + Tailwind + Supabase. Public viewer for research topics (6 columns),
-1 admin uploads Excel (replace total). UI mirrors `contoh/Beranda.png`.
+Live: https://telujakarta-listjudulriset.netlify.app
 
-## Prasyarat
+Vite React + Tailwind. Daftar topik tugas akhir 7 kolom, data dari JSON lokal.
+Tema merah-putih + aksen slate. Login + database (Supabase) PENDING.
 
-- Node 24, npm
-- Akun Supabase (free)
+## Tambah data (tanpa terminal)
 
-## Setup
+1. GitHub repo → `src/data/topics.json` → Edit (pensil).
+2. Tambah objek sebelum `]` penutup (koma setelah objek sebelumnya):
 
-```bash
-cp .env.example .env
-# isi .env:
-# VITE_SUPABASE_URL=https://xyz.supabase.co
-# VITE_SUPABASE_ANON_KEY=anon-key-here
-npm install
+```json
+,
+{
+  "judul": "...",
+  "latar": "...",
+  "masalah": "... (boleh kosong, tampil -)",
+  "target": "... (\n untuk baris baru)",
+  "kode_dosen": "...",
+  "ketersediaan": "Tersedia"
+}
 ```
 
-## Database (Supabase Dashboard)
+3. Commit changes → Netlify auto redeploy ±1 menit → cek `/topik`.
+4. Build gagal = JSON typo (koma/kutip) → benerin, commit lagi.
 
-1. SQL Editor -> paste `supabase/schema.sql` -> Run (table + RLS + RPC `replace_ideas`).
-2. SQL Editor -> paste `supabase/seed.sql` -> Run (5 rows dummy).
-3. Table Editor -> cek 5 rows muncul di `research_ideas`.
+Atau paste data ke chat, maintainer yang append + push.
 
-## Buat user admin
+## Fitur `/topik`
 
-Authentication -> Add user -> Create new user:
-
-- Email: `prodis1tt@admin.local` (login pakai username `prodis1tt`, di-map ke email ini)
-- Password: <rahasia, jangan commit>
-- Auto Confirm User: ON
+- Search semua kolom teks, pagination 10/20/50.
+- Sort: klik header Judul Topik / Kode Dosen / Ketersediaan (asc → desc → reset).
+- Cell panjang: line-clamp + Baca selengkapnya. Badge Tersedia hijau / Tidak Tersedia merah.
+- Tabel full-bleed (min 1600px), scroll horizontal di layar kecil.
 
 ## Jalan lokal
 
 ```bash
-npm run dev
-# buka http://localhost:5173
-# / = Beranda, /topik = daftar, /login = admin, /admin = upload Excel
+cd "E:\AI Agent\website_ide_riset"
+npm install
+node node_modules\vite\bin\vite.js --port 5175   # 5173 dipakai project lain
+# /=Beranda, /topik=daftar (/login + /admin ada tapi pending/disembunyikan)
 ```
 
-## Format Excel upload
+## Deploy Netlify
 
-Header wajib (urutan bebas, case-insensitive):
-
-`Judul Riset | Latar Belakang | Masalah/Problem | Permasalahan yang diselesaikan | Kode Dosen | Ketersediaan`
-
-- Maks 2000 baris (lebihnya dipotong, ada peringatan).
-- `Ketersediaan`: `Tersedia` tepat (case-insensitive) -> `Tersedia`, sisanya -> `Tidak Tersedia`.
-- Replace total: hapus semua lama, ganti baru (konfirmasi dulu di dashboard).
-
-## Build + deploy Vercel
-
-```bash
-npm run build
-```
-
-Vercel: import repo -> Framework Vite -> env `VITE_SUPABASE_URL`,
-`VITE_SUPABASE_ANON_KEY` -> Deploy. `public/bg-kampus.jpg` ikut ter-bundle.
+Import repo GitHub → preset dari `netlify.toml` (build `npm run build`,
+publish `dist`, SPA redirect `/*` → `/index.html`). Auto deploy tiap push `master`.
 
 ## Struktur
 
-- `src/pages/Home.jsx` (Beranda + logo + footer Powered-by), `Topics.jsx`,
-  `Login.jsx`, `Admin.jsx`
-- `src/components/Layout.jsx` (bg `/bg-kampus.jpg`), `TopicTable.jsx`,
-  `SearchBar.jsx`, `Pagination.jsx`, `Badge.jsx`
-- `src/lib/supabase.js`, `excel.js`, `auth.js`
-- `supabase/schema.sql`, `seed.sql`
+- `src/data/topics.json` — DATA (sumber kebenaran saat ini)
+- `src/pages/Home.jsx`, `Topics.jsx` (+ `Login.jsx`, `Admin.jsx` pending)
+- `src/components/TopicTable.jsx`, `SearchBar.jsx`, `Pagination.jsx`, `Badge.jsx`, `Layout.jsx`
+- `src/lib/` — `supabase.js` (pending, no-crash tanpa env), `excel.js`, `auth.js` (pending)
+- `supabase/` — `schema.sql`, `seed.sql` (pending, belum di-Run)
+- `public/logo-telkom.png` — logo (sumber `contoh/aset/`)
+- `docs/PROGRESS.md` — log progress lanjutan
