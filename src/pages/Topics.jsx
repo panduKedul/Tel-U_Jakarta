@@ -61,7 +61,7 @@ export default function Topics() {
     <div className="min-h-screen bg-slate-100">
       <header className="bg-red-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-stripes" />
-        <div className="relative max-w-7xl mx-auto px-4 py-6 flex items-center gap-4">
+        <div className="relative w-full px-6 py-6 flex items-center gap-4">
           <Link to="/" className="w-10 h-10 shrink-0 rounded-xl bg-white/15 hover:bg-white/25 transition text-white flex items-center justify-center text-xl font-bold" aria-label="Kembali">←</Link>
           <img src="/logo-telkom.png" alt="Telkom University" className="w-11 h-11 rounded-xl bg-white p-1 shrink-0" />
           <div>
@@ -70,7 +70,7 @@ export default function Topics() {
           </div>
         </div>
       </header>
-      <main className="max-w-7xl mx-auto px-4 py-6">
+      <main className="w-full px-6 py-6">
         <SearchBar value={q} onChange={(v) => { setQ(v); setPage(1); }} />
         <div className="mt-4 bg-white rounded-2xl p-2 border border-slate-200 shadow-sm">
           <TopicTable rows={rows} start={start} sortKey={sortKey} sortDir={sortDir} onSort={onSort} />

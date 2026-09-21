@@ -24,7 +24,7 @@ export default function TopicTable({ rows, start = 0, sortKey, sortDir, onSort }
   const thSort = th + " cursor-pointer select-none hover:bg-red-800 whitespace-nowrap";
   return (
     <div className="overflow-x-auto">
-      <table className="w-full min-w-[1200px] text-slate-800 text-sm">
+      <table className="w-full min-w-[1600px] text-slate-800 text-sm">
         <thead>
           <tr className="bg-red-700 text-white text-left">
             <th className="p-3 rounded-tl-xl">Nomor</th>
