@@ -14,5 +14,13 @@
     "target": "1. Meningkatkan efisiensi kompresi citra\n2. Meningkatkan kualitas citra hasil kompresi\n3. Mengurangi bitrate yang diperlukan\n4. Menghasilkan sistem yang robust terhadap noise\n5. Menghasilkan model yang dapat dikembangkan untuk penelitian lanjutan",
     "kode_dosen": "TAV",
     "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "AI-Based Image Compression Untuk IoT",
+    "latar": "Menghasilkan gambar dalam jumlah besar. Penelitian mengembangkan kompresi berbasis deep learning sebelum data dikirim ke server/cloud.",
+    "masalah": "Problem pengiriman data jumlah besar ataupun dengan ukuran yang besar berdampak pada proses pengiriman data, seringkali data mengalami keterlambatan ataupun penurunan kualitas, dan kerusakan saat proses transmit. Penelitian ini berfokus bagaimana cara untuk mengkompresi gambar menjadi ukuran yang kecil pada proses transmit sehingga bisa menghemat ruang dan waktu yang dibutuhkan.",
+    "target": "1. Meningkatkan efisiensi bitrate\n2. Mempertahankan kualitas citra\n3. Menghasilkan model yang dapat dikembangkan",
+    "kode_dosen": "TAV",
+    "ketersediaan": "Tersedia"
   }
 ]
