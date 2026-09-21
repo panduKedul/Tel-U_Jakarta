@@ -3,7 +3,7 @@
 > Update: 2026-09-21. File ini sumber lanjutan progress. Baca dulu tiap lanjut kerja.
 
 ## Status
-Web jadi lokal, Supabase project ada tapi schema BELUM di-Run, BELUM deploy Netlify.
+PIVOT 2026-09-21 siang: database + login PENDING. Sumber data = `src/data/topics.json` (manual via chat). User paste data → append JSON → push → Netlify auto deploy.
 
 ## Link
 - GitHub: https://github.com/panduKedul/Tel-U_Jakarta.git (branch `master`, push ok)
@@ -25,9 +25,9 @@ Vite 5 + React 18 + Tailwind 3 + react-router 6 + supabase-js 2 + xlsx. Tema mer
 - [x] Build PASS (89 modules), netlify.toml, push GitHub 12 commit
 
 ## Pending (urut)
-1. [ ] Supabase SQL Editor: Run `supabase/schema.sql` lalu `supabase/seed.sql` → cek Table Editor 5 rows (terakhir cek: 404 table missing)
-2. [ ] Auth → Users → Add user `prodis1tt@admin.local` / temp, Auto Confirm ON → ganti password kuat
-3. [ ] Tes lokal: `npm run dev -- --port 5175` → `/topik` 5 rows → login → upload Excel replace
+1. [x] PIVOT DONE 2ff6ebe: tabel 7 kolom (Nomor, Judul Topik, Latar Belakang, Masalah, Target Solusi, Kode Dosen, Ketersediaan), logo `public/logo-telkom.png`, login hidden, seed 1 data MIMO-GFDM (AGG, masalah kosong → `-`)
+2. [ ] DATA: user kirim data berikutnya format 6 field (judul, latar, masalah, target, kode_dosen, ketersediaan) → append `src/data/topics.json` → push
+3. [ ] (PENDING) Supabase schema/seed, admin user, Netlify env + import — lanjut bila database diaktifkan lagi
 4. [ ] Netlify import repo → env `VITE_SUPABASE_URL` + `VITE_SUPABASE_ANON_KEY` → deploy → trigger redeploy
 5. [ ] Rotate password admin (temp bocor di chat)
 
