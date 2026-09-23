@@ -5,7 +5,8 @@
 ## Status
 LIVE https://telujakarta-listjudulriset.netlify.app — 12 data (8 TAV + 4 KLA).
 PIVOT: database (Supabase) + login PENDING. Sumber data = `src/data/topics.json` manual.
-SOP: user kirim data → append JSON → build → commit → push → Netlify auto redeploy.
+SOP: edit spreadsheet kurator → web update otomatis (fetch gviz tiap buka /topik).
+`src/data/topics.json` = fallback offline. SOP lama (append JSON via chat) pensiun.
 
 ## Link
 - GitHub: https://github.com/panduKedul/Tel-U_Jakarta.git (branch `master`)
@@ -47,6 +48,10 @@ Format: `{judul, latar, masalah, target, kode_dosen, ketersediaan, tanggal}`. Ko
 - [x] Audit ronde 3: 6 serangan gagal (curi kunci bundle, intip /.env-/.git-/netlify.toml-,
   XSS search, link luar, open redirect, bypass pager). Catatan: trust pihak ke-3
   (2 situs luar) + nama pribadi publik. Risiko utama tetap takeover akun GitHub/Netlify.
+- [x] Sheet-sync live: /topik fetch gviz spreadsheet gabungan (`src/lib/sheets.js`,
+  parser teruji 12 baris data asli), JSON fallback, label sumber, CSP +docs.google.com.
+  Aturan sheet: kolom per indeks (1=Dosen 2=Judul 3=Latar 4=Masalah 5=Tujuan 6=Tanggal 7=Status),
+  baris tanpa judul di-skip. Ganti header kol-6 jadi "Tanggal" bila sempat.
 
 ## Pending
 1. [ ] DATA: append via chat atau GitHub web edit (template di README)
