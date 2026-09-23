@@ -5,7 +5,8 @@
     "masalah": "Bagaimana meningkatkan efisiensi dan kualitas Learned Image Compression pada citra yang mengandung noise, karena noise dapat mengganggu proses pembentukan representasi fitur dan menyebabkan informasi yang kurang relevan ikut dikompresi. Penelitian ini berfokus pada bagaimana mengintegrasikan proses denoising ke dalam sistem kompresi sehingga dapat menghasilkan representasi yang lebih bersih, mengurangi kebutuhan bitrate, dan mempertahankan kualitas citra hasil kompresi.",
     "target": "1. Meningkatkan efisiensi kompresi citra\n2. Meningkatkan kualitas citra hasil kompresi\n3. Mengurangi bitrate yang diperlukan\n4. Menghasilkan sistem yang robust terhadap noise\n5. Menghasilkan model yang dapat dikembangkan untuk penelitian lanjutan",
     "kode_dosen": "TAV",
-    "ketersediaan": "Tersedia"
+    "ketersediaan": "Tersedia",
+    "tanggal": "September 2026"
   },
   {
     "judul": "AI-Based Image Compression Untuk IoT",
@@ -13,7 +14,8 @@
     "masalah": "Problem pengiriman data jumlah besar ataupun dengan ukuran yang besar berdampak pada proses pengiriman data, seringkali data mengalami keterlambatan ataupun penurunan kualitas, dan kerusakan saat proses transmit. Penelitian ini berfokus bagaimana cara untuk mengkompresi gambar menjadi ukuran yang kecil pada proses transmit sehingga bisa menghemat ruang dan waktu yang dibutuhkan.",
     "target": "1. Meningkatkan efisiensi bitrate\n2. Mempertahankan kualitas citra\n3. Menghasilkan model yang dapat dikembangkan",
     "kode_dosen": "TAV",
-    "ketersediaan": "Tersedia"
+    "ketersediaan": "Tersedia",
+    "tanggal": "September 2026"
   },
   {
     "judul": "Traffic Management Optimization Using Graph Theory for Shortest Path Routing",
@@ -21,7 +23,8 @@
     "masalah": "Bagaimana menentukan rute perjalanan yang optimal menggunakan pendekatan Graph Theory dan algoritma Shortest Path dengan mempertimbangkan parameter seperti jarak, waktu tempuh, atau tingkat kepadatan lalu lintas dalam bentuk aplikasi.",
     "target": "1. Mencari rute optimal\n2. Mengintegrasikan algoritma jaringan ke dalam traffic management system\n3. Menghasilkan model yang dapat menjadi solusi mengatasi kemacetan",
     "kode_dosen": "TAV",
-    "ketersediaan": "Tersedia"
+    "ketersediaan": "Tersedia",
+    "tanggal": "September 2026"
   },
   {
     "judul": "Point Cloud Compression Super Resolution",
@@ -29,7 +32,8 @@
     "masalah": "Bagaimana cara menerapkan super resolution pada point cloud tanpa menghilangkan informasi asli dan menjaga data dari noise.",
     "target": "Menggabungkan point cloud compression dan super resolution untuk memperoleh keseimbangan antara bitrate dan kualitas citra",
     "kode_dosen": "TAV",
-    "ketersediaan": "Tersedia"
+    "ketersediaan": "Tersedia",
+    "tanggal": "September 2026"
   },
   {
     "judul": "Image-Based Obstacle Detection for Autonomous Mobile Robots in Indoor Environments",
@@ -37,7 +41,8 @@
     "masalah": "Robot dapat mengalami kesulitan dalam mendeteksi objek di lingkungan yang memiliki variasi pencahayaan, ukuran objek, dan posisi objek. Oleh karena itu, diperlukan metode deteksi berbasis citra yang mampu memberikan informasi mengenai keberadaan penghalang secara tepat dan akurat.",
     "target": "Menghasilkan sistem deteksi obstacle berbasis pengolahan citra untuk robot mobile yang tepat dan akurat",
     "kode_dosen": "TAV",
-    "ketersediaan": "Tersedia"
+    "ketersediaan": "Tersedia",
+    "tanggal": "September 2026"
   },
   {
     "judul": "Alat Monitoring Pertanian Berbasis Mikrokontroler",
@@ -45,7 +50,8 @@
     "masalah": "Bagaimana mendeteksi kondisi tanaman secara otomatis menggunakan citra yang diperoleh oleh robot dan mengirimkan informasi tersebut melalui jaringan.",
     "target": "Menghasilkan sistem monitoring pertanian berbasis IoT dengan integrasi robot dan jaringan untuk membantu petani dalam mendeteksi kondisi tanaman",
     "kode_dosen": "TAV",
-    "ketersediaan": "Tersedia"
+    "ketersediaan": "Tersedia",
+    "tanggal": "September 2026"
   },
   {
     "judul": "Perbandingan Metode Denoising untuk Peningkatan Kualitas Citra Digital",
@@ -53,7 +59,8 @@
     "masalah": "1. Bagaimana pengaruh jenis dan tingkat noise terhadap kualitas citra\n2. Metode denoising apa yang efektif untuk mengurangi noise\n3. Seberapa besar detail citra dapat dipertahankan setelah proses denoising\n4. Bagaimana perbandingan performa metode denoising berdasarkan PSNR, SSIM, dan waktu pemrosesan",
     "target": "Meningkatkan kualitas citra digital dengan mengurangi noise dan menghasilkan model denoising yang dapat meningkatkan kualitas citra pada proses rekonstruksi/transmisi dalam jaringan",
     "kode_dosen": "TAV",
-    "ketersediaan": "Tersedia"
+    "ketersediaan": "Tersedia",
+    "tanggal": "September 2026"
   },
   {
     "judul": "Sistem Monitoring Lingkungan Berbasis IoT Menggunakan Image Processing",
@@ -61,7 +68,8 @@
     "masalah": "1. Bagaimana memperoleh data citra lingkungan\n2. Bagaimana melakukan pengolahan citra untuk mendeteksi kondisi lingkungan\n3. Bagaimana mengirimkan data citra melalui jaringan secara efisien\n4. Bagaimana performa sistem berdasarkan akurasi deteksi dan waktu respon",
     "target": "Mengembangkan sistem monitoring lingkungan berbasis IoT dengan memanfaatkan kamera dan image processing untuk mendeteksi kondisi lingkungan secara otomatis",
     "kode_dosen": "TAV",
-    "ketersediaan": "Tersedia"
+    "ketersediaan": "Tersedia",
+    "tanggal": "September 2026"
   },
   {
     "judul": "Perancangan Smart Farming untuk Pertanian Hijau dalam Budidaya Hidroponik berbasis Antena (HydroFuture)",
@@ -69,7 +77,8 @@
     "masalah": "Pemantauan parameter hidroponik masih manual, tidak real-time, dan rawan kesalahan.",
     "target": "Merancang dan merealisasikan sistem smart farming hidroponik berbasis antena dan IoT",
     "kode_dosen": "KLA",
-    "ketersediaan": "Penuh"
+    "ketersediaan": "Penuh",
+    "tanggal": "September 2026"
   },
   {
     "judul": "Perancangan EcoSortX: Smart Trash Bin Berbasis Sensor dan Energi Surya Adaptif",
@@ -77,7 +86,8 @@
     "masalah": "Pemilahan sampah masih dilakukan manual dan sering tidak dilakukan sama sekali oleh pengguna.",
     "target": "Merancang tempat sampah pintar berbasis sensor dengan energi surya adaptif",
     "kode_dosen": "KLA",
-    "ketersediaan": "Tersedia"
+    "ketersediaan": "Tersedia",
+    "tanggal": "September 2026"
   },
   {
     "judul": "GlucoWave: Wearable Microwave Sensor for Non-Invasive Glucose Detection",
@@ -85,7 +95,8 @@
     "masalah": "Diperlukan prototipe/metode yang nyaman untuk cek glukosa secara non-invasif.",
     "target": "Menghasilkan prototype wearable microwave sensor untuk deteksi glukosa non-invasif",
     "kode_dosen": "KLA",
-    "ketersediaan": "Penuh"
+    "ketersediaan": "Penuh",
+    "tanggal": "September 2026"
   },
   {
     "judul": "Perancangan Sistem Komunikasi Telemetri Air-to-Ground",
@@ -93,6 +104,7 @@
     "masalah": "Diperlukan prototipe/metode sistem komunikasi telemetri air-to-ground yang andal.",
     "target": "Menghasilkan prototype sistem komunikasi telemetri air-to-ground",
     "kode_dosen": "KLA",
-    "ketersediaan": "Tersedia"
+    "ketersediaan": "Tersedia",
+    "tanggal": "September 2026"
   }
 ]

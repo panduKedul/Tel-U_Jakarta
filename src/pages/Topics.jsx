@@ -10,7 +10,7 @@ export function filterTopics(all, q) {
   const needle = String(q || "").toLowerCase();
   if (!needle) return all;
   return all.filter((r) =>
-    [r.judul, r.latar, r.masalah, r.target, r.kode_dosen]
+    [r.judul, r.tanggal, r.latar, r.masalah, r.target, r.kode_dosen]
       .join(" ")
       .toLowerCase()
       .includes(needle)

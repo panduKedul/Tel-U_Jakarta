@@ -28,6 +28,7 @@ export default function TopicTable({ rows, start = 0, sortKey, sortDir, onSort }
         <thead>
           <tr className="bg-red-700 text-white text-left">
             <th className="p-3 rounded-tl-xl">Nomor</th>
+            <th className={thSort} onClick={() => onSort("tanggal")}>Tanggal{arrow("tanggal")}</th>
             <th className={thSort} onClick={() => onSort("judul")}>Judul Topik{arrow("judul")}</th>
             <th className={th}>Latar Belakang</th>
             <th className={th}>Masalah</th>
@@ -40,6 +41,7 @@ export default function TopicTable({ rows, start = 0, sortKey, sortDir, onSort }
           {rows.map((r, i) => (
             <tr key={r.id || start + i} className={"border-t border-slate-200 align-top " + (i % 2 ? "bg-slate-50" : "bg-white")}>
               <td className="p-3 text-slate-500">{start + i + 1}</td>
+              <td className="p-3 whitespace-nowrap text-slate-600">{r.tanggal || "-"}</td>
               <td className="p-3 font-bold text-slate-900">{r.judul}</td>
               <td className="p-3"><Cell t={r.latar} /></td>
               <td className="p-3"><Cell t={r.masalah} /></td>

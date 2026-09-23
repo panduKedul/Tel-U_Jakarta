@@ -2,7 +2,7 @@
 
 Live: https://telujakarta-listjudulriset.netlify.app
 
-Vite React + Tailwind. Daftar topik tugas akhir 7 kolom, data dari JSON lokal.
+Vite React + Tailwind. Daftar topik tugas akhir 8 kolom, data dari JSON lokal.
 Tema merah-putih + aksen slate. Login + database (Supabase) PENDING.
 
 ## Tambah data (tanpa terminal)
@@ -18,7 +18,8 @@ Tema merah-putih + aksen slate. Login + database (Supabase) PENDING.
   "masalah": "... (boleh kosong, tampil -)",
   "target": "... (\n untuk baris baru)",
   "kode_dosen": "...",
-  "ketersediaan": "Tersedia"
+  "ketersediaan": "Tersedia",
+  "tanggal": "September 2026"
 }
 ```
 
@@ -30,7 +31,7 @@ Atau paste data ke chat, maintainer yang append + push.
 ## Fitur `/topik`
 
 - Search semua kolom teks, pagination 10/20/50.
-- Sort: klik header Judul Topik / Kode Dosen / Ketersediaan (asc → desc → reset).
+- Sort: klik header Tanggal / Judul Topik / Kode Dosen / Ketersediaan (asc → desc → reset).
 - Cell panjang: line-clamp + Baca selengkapnya. Badge Tersedia hijau / selain itu (Penuh, Tidak Tersedia) merah.
 - Tabel full-bleed (min 1600px), scroll horizontal di layar kecil.
 - Footer `@2026 S1 Teknik Telekomunikasi - Telkom University Jakarta` di `/topik` + `/admin`.

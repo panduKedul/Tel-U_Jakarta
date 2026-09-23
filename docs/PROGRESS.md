@@ -25,8 +25,8 @@ Format: `{judul, latar, masalah, target, kode_dosen, ketersediaan}`. Kosong → 
 ## Done
 - [x] Scaffold + Supabase client/schema/seed/RLS/RPC locked (pending pakai)
 - [x] Excel/auth helper + test PASS (pending pakai)
-- [x] Routes, tabel 7 kolom (Nomor, Judul Topik, Latar Belakang, Masalah, Target Solusi, Kode Dosen, Ketersediaan)
-- [x] Search, pagination 10/20/50, sort judul/kode/ketersediaan (klik header, asc→desc→reset)
+- [x] Routes, tabel 8 kolom (Nomor, Tanggal, Judul Topik, Latar Belakang, Masalah, Target Solusi, Kode Dosen, Ketersediaan)
+- [x] Search, pagination 10/20/50, sort tanggal/judul/kode/ketersediaan (klik header, asc→desc→reset)
 - [x] Restyle merah-putih, logo Telkom, login hidden, full-bleed tabel 1600px
 - [x] netlify.toml, supabase no-crash tanpa env, push GitHub, Netlify live 200
 - [x] Footer `@2026 S1 Teknik Telekomunikasi` (/topik + /admin)
