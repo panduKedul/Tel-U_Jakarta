@@ -1,13 +1,5 @@
 [
   {
-    "judul": "Perancangan Sistem MIMO-GFDM dengan Estimasi Kanal dan Advanced Signal Detection untuk Meningkatkan Keandalan Komunikasi Beyond 5G",
-    "latar": "Sifat GFDM yang non-orthogonal membuat sistem rentan terhadap inter-carrier interference (ICI). Dokumen menyebut ZF dan MMSE sebagai receiver yang dapat digunakan untuk mengatasi kondisi tersebut.\nSementara itu, pada bagian lain dokumen digunakan MIMO 2x2, estimasi kanal LS, dan evaluasi berdasarkan MSE, NMSE, SER, BER, serta kapasitas kanal. Penelitian bahkan menyarankan pengembangan menuju LMMSE/LR-LMMSE, MMSE/V-BLAST, serta dimensi MIMO lebih besar.\nCapstone baru dapat mengintegrasikan kedua arah tersebut menjadi MIMO-GFDM.",
-    "masalah": "Bagaimana meningkatkan performa MIMO-GFDM ketika kanal tidak diketahui secara sempurna dengan mempertimbangkan:\n- channel estimation;\n- inter-stream interference;\n- ICI dari GFDM;\n- multipath fading;\n- noise.",
-    "target": "1. Merancang MIMO-GFDM 2x2.\n2. Mengimplementasikan pilot-assisted channel estimation.\n3. Membandingkan LS dan LMMSE.\n4. Membandingkan ZF, MMSE, dan V-BLAST/MMSE-SIC.\n5. Mengevaluasi BER, MSE/NMSE, dan capacity.\n6. Menentukan kombinasi estimator-detector terbaik.",
-    "kode_dosen": "AGG",
-    "ketersediaan": "Tersedia"
-  },
-  {
     "judul": "Image Compression with Automatic Denoising Feature",
     "latar": "Perkembangan aplikasi multimedia menyebabkan peningkatan kebutuhan penyimpanan dan transmisi data citra secara efisien. Learned Image Compression (LIC) menjadi salah satu pendekatan yang berkembang karena mampu mempelajari representasi citra secara end-to-end untuk memperoleh efisiensi kompresi yang baik. Namun, keberadaan noise pada citra akibat proses akuisisi, sensor, pencahayaan, maupun transmisi dapat memengaruhi kualitas representasi dan menambah informasi yang kurang relevan untuk dikompresi. Oleh karena itu, diperlukan pendekatan Denoising-Enhanced Learned Image Compression yang mengintegrasikan proses denoising ke dalam sistem kompresi untuk memperoleh representasi citra yang lebih bersih dan efisien, sekaligus mempertahankan kualitas citra setelah proses kompresi.",
     "masalah": "Bagaimana meningkatkan efisiensi dan kualitas Learned Image Compression pada citra yang mengandung noise, karena noise dapat mengganggu proses pembentukan representasi fitur dan menyebabkan informasi yang kurang relevan ikut dikompresi. Penelitian ini berfokus pada bagaimana mengintegrasikan proses denoising ke dalam sistem kompresi sehingga dapat menghasilkan representasi yang lebih bersih, mengurangi kebutuhan bitrate, dan mempertahankan kualitas citra hasil kompresi.",
@@ -21,6 +13,86 @@
     "masalah": "Problem pengiriman data jumlah besar ataupun dengan ukuran yang besar berdampak pada proses pengiriman data, seringkali data mengalami keterlambatan ataupun penurunan kualitas, dan kerusakan saat proses transmit. Penelitian ini berfokus bagaimana cara untuk mengkompresi gambar menjadi ukuran yang kecil pada proses transmit sehingga bisa menghemat ruang dan waktu yang dibutuhkan.",
     "target": "1. Meningkatkan efisiensi bitrate\n2. Mempertahankan kualitas citra\n3. Menghasilkan model yang dapat dikembangkan",
     "kode_dosen": "TAV",
+    "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "Traffic Management Optimization Using Graph Theory for Shortest Path Routing",
+    "latar": "Peningkatan jumlah kendaraan menyebabkan kepadatan lalu lintas dan waktu tempuh yang semakin tinggi. Salah satu solusi yang dapat digunakan adalah memodelkan jaringan jalan menggunakan Graph Theory, di mana persimpangan direpresentasikan sebagai node dan ruas jalan sebagai edge. Dengan pendekatan ini, algoritma Shortest Path dapat digunakan untuk menentukan rute perjalanan yang lebih efisien.",
+    "masalah": "Bagaimana menentukan rute perjalanan yang optimal menggunakan pendekatan Graph Theory dan algoritma Shortest Path dengan mempertimbangkan parameter seperti jarak, waktu tempuh, atau tingkat kepadatan lalu lintas dalam bentuk aplikasi.",
+    "target": "1. Mencari rute optimal\n2. Mengintegrasikan algoritma jaringan ke dalam traffic management system\n3. Menghasilkan model yang dapat menjadi solusi mengatasi kemacetan",
+    "kode_dosen": "TAV",
+    "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "Point Cloud Compression Super Resolution",
+    "latar": "Point Cloud merupakan penelitian yang dikembangkan dalam bidang pengolahan citra digital, penelitian ini bertujuan untuk merekonstruksi citra yang memiliki resolusi tinggi dan berbasi 3D namun point cloud membutuhkan bandwidth besar untuk transmisi. Kompresi dapat mengurangi bitrate, tetapi semakin tinggi kompresi dapat menyebabkan kehilangan informasi geometris. Super Resolution digunakan setelah proses kompresi untuk meningkatkan kembali kualitas point cloud sehingga dapat meningkatkan kualitas citra yang didapat.",
+    "masalah": "Bagaimana cara menerapkan super resolution pada point cloud tanpa menghilangkan informasi asli dan menjaga data dari noise.",
+    "target": "Menggabungkan point cloud compression dan super resolution untuk memperoleh keseimbangan antara bitrate dan kualitas citra",
+    "kode_dosen": "TAV",
+    "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "Image-Based Obstacle Detection for Autonomous Mobile Robots in Indoor Environments",
+    "latar": "Robot mobile membutuhkan kemampuan untuk mengenali kondisi lingkungan agar dapat bergerak secara aman. Kamera dapat digunakan sebagai sensor visual untuk memperoleh informasi mengenai objek dan penghalang di sekitar robot. Dengan teknik image processing atau penggabungan computer vision, informasi dari kamera dapat diolah untuk mendeteksi keberadaan objek yang berpotensi menghambat pergerakan robot.",
+    "masalah": "Robot dapat mengalami kesulitan dalam mendeteksi objek di lingkungan yang memiliki variasi pencahayaan, ukuran objek, dan posisi objek. Oleh karena itu, diperlukan metode deteksi berbasis citra yang mampu memberikan informasi mengenai keberadaan penghalang secara tepat dan akurat.",
+    "target": "Menghasilkan sistem deteksi obstacle berbasis pengolahan citra untuk robot mobile yang tepat dan akurat",
+    "kode_dosen": "TAV",
+    "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "Alat Monitoring Pertanian Berbasis Mikrokontroler",
+    "latar": "Monitoring tanaman secara manual membutuhkan waktu dan tenaga, terutama pada lahan yang luas seperti lahan padi, perkebunan teh, sayur dan lain-lain. Kamera pada umumnya memiliki keterbatasan untuk menjangkau area dari lahan yang dipantau, oleh karena itu diperlukan sebuah inovasi robot yang digunakan untuk memperoleh citra tanaman secara otomatis. Citra tersebut kemudian dapat diproses untuk memperoleh informasi mengenai kondisi tanaman.",
+    "masalah": "Bagaimana mendeteksi kondisi tanaman secara otomatis menggunakan citra yang diperoleh oleh robot dan mengirimkan informasi tersebut melalui jaringan.",
+    "target": "Menghasilkan sistem monitoring pertanian berbasis IoT dengan integrasi robot dan jaringan untuk membantu petani dalam mendeteksi kondisi tanaman",
+    "kode_dosen": "TAV",
+    "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "Perbandingan Metode Denoising untuk Peningkatan Kualitas Citra Digital",
+    "latar": "Noise merupakan salah satu permasalahan umum pada citra digital yang dapat muncul akibat sensor kamera, kondisi lingkungan, proses transmisi, maupun perangkat elektronik. Keberadaan noise dapat mengurangi kualitas citra dan mengganggu proses pengolahan citra berikutnya. Image denoising digunakan untuk mengurangi noise dengan mempertahankan informasi penting pada citra. Beberapa metode yang umum digunakan antara lain Mean Filter, Median Filter, Gaussian Filter dan metode berbasis Deep Learning. Oleh karena itu, diperlukan perbandingan dan pembuatan sebuah filter denoising baru yang memiliki kemampuan lebih baik dibandingkan filter yang sudah ada saat ini.",
+    "masalah": "1. Bagaimana pengaruh jenis dan tingkat noise terhadap kualitas citra\n2. Metode denoising apa yang efektif untuk mengurangi noise\n3. Seberapa besar detail citra dapat dipertahankan setelah proses denoising\n4. Bagaimana perbandingan performa metode denoising berdasarkan PSNR, SSIM, dan waktu pemrosesan",
+    "target": "Meningkatkan kualitas citra digital dengan mengurangi noise dan menghasilkan model denoising yang dapat meningkatkan kualitas citra pada proses rekonstruksi/transmisi dalam jaringan",
+    "kode_dosen": "TAV",
+    "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "Sistem Monitoring Lingkungan Berbasis IoT Menggunakan Image Processing",
+    "latar": "Monitoring kondisi lingkungan secara manual membutuhkan waktu dan tenaga, terutama pada wilayah yang luas. Pemanfaatan image processing dapat digunakan untuk mengolah citra yang diperoleh kamera sehingga informasi tertentu dapat diperoleh secara otomatis. Sebagai contoh, sistem dapat digunakan untuk mendeteksi sampah, genangan air, kondisi jalan, atau objek tertentu pada lingkungan.",
+    "masalah": "1. Bagaimana memperoleh data citra lingkungan\n2. Bagaimana melakukan pengolahan citra untuk mendeteksi kondisi lingkungan\n3. Bagaimana mengirimkan data citra melalui jaringan secara efisien\n4. Bagaimana performa sistem berdasarkan akurasi deteksi dan waktu respon",
+    "target": "Mengembangkan sistem monitoring lingkungan berbasis IoT dengan memanfaatkan kamera dan image processing untuk mendeteksi kondisi lingkungan secara otomatis",
+    "kode_dosen": "TAV",
+    "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "Perancangan Smart Farming untuk Pertanian Hijau dalam Budidaya Hidroponik berbasis Antena (HydroFuture)",
+    "latar": "Kebutuhan pangan terus meningkat sementara lahan pertanian semakin berkurang akibat alih fungsi lahan dan urbanisasi. Hidroponik menjadi solusi pertanian hijau yang hemat lahan dan air, namun masih banyak dikelola secara manual.",
+    "masalah": "Pemantauan parameter hidroponik masih manual, tidak real-time, dan rawan kesalahan.",
+    "target": "Merancang dan merealisasikan sistem smart farming hidroponik berbasis antena dan IoT",
+    "kode_dosen": "KLA",
+    "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "Perancangan EcoSortX: Smart Trash Bin Berbasis Sensor dan Energi Surya Adaptif",
+    "latar": "Volume sampah perkotaan terus meningkat seiring pertumbuhan penduduk, sementara pemilahan sampah di sumber masih sangat rendah.",
+    "masalah": "Pemilahan sampah masih dilakukan manual dan sering tidak dilakukan sama sekali oleh pengguna.",
+    "target": "Merancang tempat sampah pintar berbasis sensor dengan energi surya adaptif",
+    "kode_dosen": "KLA",
+    "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "GlucoWave: Wearable Microwave Sensor for Non-Invasive Glucose Detection",
+    "latar": "Peningkatan jumlah penderita diabetes mellitus (DM) namun masih minimnya alat deteksi glukosa yang nyaman digunakan.",
+    "masalah": "Diperlukan prototipe/metode yang nyaman untuk cek glukosa secara non-invasif.",
+    "target": "Menghasilkan prototype wearable microwave sensor untuk deteksi glukosa non-invasif",
+    "kode_dosen": "KLA",
+    "ketersediaan": "Tersedia"
+  },
+  {
+    "judul": "Perancangan Sistem Komunikasi Telemetri Air-to-Ground",
+    "latar": "Roket mengalami perubahan posisi, ketinggian, kecepatan, serta orientasi secara dinamis sehingga kualitas kanal komunikasi antara roket dan ground station juga dapat berubah sepanjang penerbangan.",
+    "masalah": "Diperlukan prototipe/metode sistem komunikasi telemetri air-to-ground yang andal.",
+    "target": "Menghasilkan prototype sistem komunikasi telemetri air-to-ground",
+    "kode_dosen": "KLA",
     "ketersediaan": "Tersedia"
   }
 ]
