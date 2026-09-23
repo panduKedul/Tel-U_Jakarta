@@ -1,6 +1,6 @@
 # Website Ide Riset — Progress Log
 
-> Update: 2026-09-23. File ini sumber lanjutan progress. Baca dulu tiap lanjut kerja.
+> Update: 2026-09-23 sore. File ini sumber lanjutan progress. Baca dulu tiap lanjut kerja.
 
 ## Status
 LIVE https://telujakarta-listjudulriset.netlify.app — 12 data (8 TAV + 4 KLA).
@@ -20,7 +20,8 @@ Tema merah-putih + slate, logo `public/logo-telkom.png`, footer `@2026 S1 Teknik
 - TAV (8, Tersedia): Image Compression Denoising, AI Image Compression IoT, Traffic Graph Theory, Point Cloud SR, Obstacle Detection Robot, Monitoring Pertanian, Denoising Comparison, Monitoring Lingkungan IoT.
 - KLA (4): HydroFuture — Penuh, EcoSortX — Tersedia, GlucoWave — Penuh, Telemetri Air-to-Ground — Tersedia.
 - Dihapus: MIMO-GFDM (AGG) atas permintaan user.
-Format: `{judul, latar, masalah, target, kode_dosen, ketersediaan}`. Kosong → `-`.
+Format: `{judul, latar, masalah, target, kode_dosen, ketersediaan, tanggal}`. Kosong → `-`.
+`tanggal` = bulan + tahun input (mis. `September 2026`).
 
 ## Done
 - [x] Scaffold + Supabase client/schema/seed/RLS/RPC locked (pending pakai)
@@ -35,10 +36,18 @@ Format: `{judul, latar, masalah, target, kode_dosen, ketersediaan}`. Kosong → 
 - [x] Audit 2026-09-23: schema hardened (role admin + validasi 1-2000 baris + length caps),
   username disamarkan, jejak kredensial di docs dibersihkan, CSP + object-src none
 - [x] `npm test` (scripts/test-excel.mjs) terdaftar di package.json
+- [x] Pager sembunyi bila hasil <= 1 halaman (tak berguna ditampilkan)
+- [x] Fix `/admin` gantung "Cek sesi..." bila backend tak tersambung → redirect `/login`
+- [x] Audit ronde 2 (attacker-side): bundle live cuma berisi placeholder Supabase
+  (= DB attack surface mati/fail-closed), header edge terkonfirmasi live,
+  nol `innerHTML`/`eval`/link-keluar. Sisa risiko real: takeover akun GitHub/Netlify
+  → anjuran 2FA + branch protection + deploy notification (di luar repo)
 
 ## Pending
 1. [ ] DATA: append via chat atau GitHub web edit (template di README)
-2. [ ] (PENDING) Aktifkan Supabase: matikan public signup, buat user admin (role `admin` di user_metadata), Run schema+seed, isi Netlify env
+2. [ ] (PENDING) Aktifkan Supabase: matikan public signup, buat user admin (role `admin` di user_metadata),
+  nyalakan CAPTCHA + rate limit, Run schema+seed (versi hardened), isi Netlify env.
+  Setelah tersambung → minta audit ronde 3 (uji signup liar + RPC).
 3. [ ] (PENDING) Aktifkan login/admin-upload lagi bila perlu
 4. [ ] Rotasi kredensial admin berkala (password generator, simpan di password manager)
 
@@ -53,4 +62,4 @@ node node_modules\vite\bin\vite.js --port 5175
 - JSON sumber kebenaran; duplikat judul (case-insensitive) ditolak.
 - Typo kecil user dibetulkan diam-diam + dilaporkan di chat.
 - Upload Excel replace-total via RPC bila DB aktif lagi.
-- `.superpowers/` scratch tak di-push. `contoh/` + `docs/` ikut repo.
+- `.superpowers/` gitignored (sebagian laporan lama sempat ke-commit sebelum ignore). `contoh/` + `docs/` ikut repo.
