@@ -16,7 +16,7 @@
 - Upload Excel replace total, header 6 kolom pas, cap 2000 rows.
 - Auth 1 admin saja, no signup, viewer anon read-only.
 - UI tiru `contoh/Beranda.png` dan `contoh/Screenshot 2026-09-21 080800.png`.
-- Kredensial plaintext JANGAN commit, pakai `.env`, username `prodis1tt` map ke `prodis1tt@admin.local`.
+- Kredensial plaintext JANGAN commit, pakai `.env`, username `admin` map ke `admin@admin.local`.
 - RLS: select public true, write authenticated only.
 
 ---
@@ -349,7 +349,7 @@ import { useState } from "react"; import { useNavigate, Link } from "react-route
 export default function Login(){ const [u,setU]=useState(""); const [p,setP]=useState(""); const [e,setE]=useState(""); const nav=useNavigate();
 return (<Layout><form onSubmit={async ev=>{ev.preventDefault(); setE(""); const {error}=await loginUsername(u,p); if(error) setE(error.message); else nav("/admin");}} className="backdrop-blur-xl bg-white/20 rounded-3xl p-8 w-full max-w-sm border border-white/30">
 <h2 className="text-white text-2xl font-bold text-center">Login Admin</h2>
-<input value={u} onChange={ev=>setU(ev.target.value)} placeholder="Username (prodis1tt)" className="w-full mt-4 rounded-xl p-3"/>
+<input value={u} onChange={ev=>setU(ev.target.value)} placeholder="Username (admin)" className="w-full mt-4 rounded-xl p-3"/>
 <input type="password" value={p} onChange={ev=>setP(ev.target.value)} placeholder="Password" className="w-full mt-3 rounded-xl p-3"/>
 {e&&<p className="text-red-300 mt-2">{e}</p>}
 <button className="w-full mt-4 bg-blue-600 text-white rounded-xl py-3 font-bold">Masuk</button>
@@ -373,7 +373,7 @@ return (<div className="min-h-screen bg-slate-900 text-white p-6 max-w-4xl mx-au
 
 - [ ] **Step 3: Verify**
 
-Run: `npm run dev`. Test: `/admin` redirect `/login` jika anon. Login `prodis1tt` salah → error. Benar → dashboard. Upload header salah → tolak. Upload valid → Replace → `/topik` update.
+Run: `npm run dev`. Test: `/admin` redirect `/login` jika anon. Login `admin` salah → error. Benar → dashboard. Upload header salah → tolak. Upload valid → Replace → `/topik` update.
 Expected: PASS semua.
 
 - [ ] **Step 4: Commit**
@@ -397,7 +397,7 @@ git commit -m "feat: login admin upload replace"
 
 - [ ] **Step 1: Copy bg + title + README**
 
-Copy 1 foto kampus contoh ke `public/bg-kampus.jpg`. Update `<title>Sistem Ide Riset</title>`. README isi: `cp .env.example .env`, buat user `prodis1tt@admin.local` di Dashboard, paste schema.sql, `npm run dev`.
+Copy 1 foto kampus contoh ke `public/bg-kampus.jpg`. Update `<title>Sistem Ide Riset</title>`. README isi: `cp .env.example .env`, buat user `admin@admin.local` di Dashboard, paste schema.sql, `npm run dev`.
 
 - [ ] **Step 2: Build verify**
 

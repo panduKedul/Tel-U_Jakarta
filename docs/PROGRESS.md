@@ -32,13 +32,15 @@ Format: `{judul, latar, masalah, target, kode_dosen, ketersediaan}`. Kosong → 
 - [x] Footer `@2026 S1 Teknik Telekomunikasi` (/topik + /admin)
 - [x] Security lapis 1: headers + CSP di netlify.toml
 - [x] Security lapis 2: login rate-limit + lockout (`src/lib/rateLimit.js`, unit-test manual via node)
+- [x] Audit 2026-09-23: schema hardened (role admin + validasi 1-2000 baris + length caps),
+  username disamarkan, jejak kredensial di docs dibersihkan, CSP + object-src none
 - [x] `npm test` (scripts/test-excel.mjs) terdaftar di package.json
 
 ## Pending
 1. [ ] DATA: append via chat atau GitHub web edit (template di README)
-2. [ ] (PENDING) Aktifkan Supabase: Run schema+seed, buat user `prodis1tt@admin.local`, isi Netlify env
+2. [ ] (PENDING) Aktifkan Supabase: matikan public signup, buat user admin (role `admin` di user_metadata), Run schema+seed, isi Netlify env
 3. [ ] (PENDING) Aktifkan login/admin-upload lagi bila perlu
-4. [ ] Rotate password admin temp (pernah tertulis di chat)
+4. [ ] Rotasi kredensial admin berkala (password generator, simpan di password manager)
 
 ## Resume dev
 ```

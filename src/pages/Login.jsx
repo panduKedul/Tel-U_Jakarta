@@ -62,7 +62,7 @@ export default function Login() {
         <input
           value={u}
           onChange={(ev) => setU(ev.target.value)}
-          placeholder="Username (prodis1tt)"
+          placeholder="Username"
           autoComplete="username"
           className="w-full mt-5 rounded-xl p-3 border border-slate-300 outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100 text-slate-800"
         />

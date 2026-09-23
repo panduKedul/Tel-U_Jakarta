@@ -41,10 +41,13 @@ create policy "public read" on research_ideas for select using (true);
 create policy "admin write" on research_ideas for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
 ```
 Hanya 1 user authenticated = admin. No anon write.
+> Catatan audit 2026-09-23: policy lama di bawah SUDAH DIGANTI oleh `supabase/schema.sql`
+> versi hardened (cek `is_admin()` via user_metadata + validasi payload). Jangan pakai snippet ini lagi.
 
 ## 5. Auth
-- Supabase Email Auth. Username request `prodis1tt` map jadi email `prodis1tt@admin.local` (Supabase butuh format email).
-- Password awal `prodis1tt` → wajib ganti via dashboard pasca-deploy, simpan di env, JANGAN commit plaintext.
+- Supabase Email Auth. Username dimap jadi email `@admin.local` (Supabase butuh format email).
+- Akun admin dibuat via dashboard, password hasil generator, simpan di password manager. JANGAN commit plaintext.
+- Signup publik WAJIB mati; user admin diberi `user_metadata: {"role": "admin"}`.
 - Routes: `/login` (email+password), `/admin` guard `session != null`, `/` dan `/topik` public.
 - Logout clear session + redirect `/`.
 
