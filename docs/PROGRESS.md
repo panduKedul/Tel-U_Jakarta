@@ -42,6 +42,11 @@ Format: `{judul, latar, masalah, target, kode_dosen, ketersediaan, tanggal}`. Ko
   (= DB attack surface mati/fail-closed), header edge terkonfirmasi live,
   nol `innerHTML`/`eval`/link-keluar. Sisa risiko real: takeover akun GitHub/Netlify
   → anjuran 2FA + branch protection + deploy notification (di luar repo)
+- [x] Footer beranda jadi link: Telkom University Jakarta → bte-jkt Tel-U,
+  Developed by Muhammad Pandu Wirakusuma → resume-pandu (tab baru, rel noopener)
+- [x] Audit ronde 3: 6 serangan gagal (curi kunci bundle, intip /.env-/.git-/netlify.toml-,
+  XSS search, link luar, open redirect, bypass pager). Catatan: trust pihak ke-3
+  (2 situs luar) + nama pribadi publik. Risiko utama tetap takeover akun GitHub/Netlify.
 
 ## Pending
 1. [ ] DATA: append via chat atau GitHub web edit (template di README)
