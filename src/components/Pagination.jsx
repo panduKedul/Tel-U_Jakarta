@@ -5,6 +5,7 @@ function pageList(page, pages) {
 }
 
 export default function Pagination({ page, pages, onChange }) {
+  if (pages <= 1) return null; // 0 hasil / muat 1 halaman: pager tak berguna
   const list = pageList(page, pages);
   const btn = (active) =>
     "w-8 h-8 rounded-lg text-sm " +
