@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { getSession, logout } from "../lib/auth";
 import { parseExcel } from "../lib/excel";
+import Footer from "../components/Footer";
 
 export default function Admin() {
   const nav = useNavigate();
@@ -135,6 +136,7 @@ export default function Admin() {
             </div>
           )}
         </div>
+        <Footer />
       </main>
       {showConfirm && (
         <div className="fixed inset-0 bg-slate-900/60 flex items-center justify-center p-4">

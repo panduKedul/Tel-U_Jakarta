@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import TopicTable from "../components/TopicTable";
 import SearchBar from "../components/SearchBar";
 import Pagination from "../components/Pagination";
+import Footer from "../components/Footer";
 import topics from "../data/topics.json";
 
 export function filterTopics(all, q) {
@@ -86,6 +87,7 @@ export default function Topics() {
           </label>
           <Pagination page={Math.min(page, pages)} pages={pages} onChange={setPage} />
         </div>
+        <Footer />
       </main>
     </div>
   );
