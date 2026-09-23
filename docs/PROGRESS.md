@@ -52,6 +52,11 @@ Format: `{judul, latar, masalah, target, kode_dosen, ketersediaan, tanggal}`. Ko
   parser teruji 12 baris data asli), JSON fallback, label sumber, CSP +docs.google.com.
   Aturan sheet: kolom per indeks (1=Dosen 2=Judul 3=Latar 4=Masalah 5=Tujuan 6=Tanggal 7=Status),
   baris tanpa judul di-skip. Ganti header kol-6 jadi "Tanggal" bila sempat.
+- [x] Audit ronde 4 (fokus sheet-sync): injeksi script via sel → tersimpan teks polos
+  (React auto-escape, 18 hit bundle = string internal React DOM, nol pakai app);
+  gviz error/null/kosong → fallback, tak pernah blank; fetch GET tanpa data user;
+  sheet publik 200 + CSP live benar. Catatan: editor sheet = kendali isi live
+  (batasi editor, jangan ada tab sensitif di file yang sama).
 
 ## Pending
 1. [ ] DATA: append via chat atau GitHub web edit (template di README)
