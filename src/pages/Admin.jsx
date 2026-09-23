@@ -16,7 +16,9 @@ export default function Admin() {
   const [showConfirm, setShowConfirm] = useState(false);
 
   useEffect(() => {
-    getSession().then((s) => {
+    getSession()
+      .catch(() => null)
+      .then((s) => {
       if (!s) nav("/login");
       else {
         supabase
