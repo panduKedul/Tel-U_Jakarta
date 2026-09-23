@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import TopicTable from "../components/TopicTable";
 import SearchBar from "../components/SearchBar";
 import Pagination from "../components/Pagination";
 import Footer from "../components/Footer";
-import topics from "../data/topics.json";
+import fallbackTopics from "../data/topics.json";
+import { fetchSheetTopics, fetchWithTimeout } from "../lib/sheets";
 
 export function filterTopics(all, q) {
   const needle = String(q || "").toLowerCase();
@@ -29,8 +30,25 @@ export default function Topics() {
   const [per, setPer] = useState(20);
   const [sortKey, setSortKey] = useState(null);
   const [sortDir, setSortDir] = useState("asc");
+  const [topics, setTopics] = useState(fallbackTopics);
+  const [live, setLive] = useState(false);
 
-  const filtered = useMemo(() => filterTopics(topics, q), [q]);
+  // Sheet dulu, JSON lokal cuma fallback offline/gagal
+  useEffect(() => {
+    const t = fetchWithTimeout();
+    fetchSheetTopics(t.signal)
+      .then((rows) => {
+        if (rows.length) {
+          setTopics(rows);
+          setLive(true);
+          setPage(1);
+        }
+      })
+      .catch(() => {})
+      .finally(t.done);
+  }, []);
+
+  const filtered = useMemo(() => filterTopics(topics, q), [topics, q]);
   const sorted = useMemo(() => {
     if (!sortKey) return filtered;
     const arr = [...filtered];
@@ -73,6 +91,9 @@ export default function Topics() {
       </header>
       <main className="w-full px-6 py-6">
         <SearchBar value={q} onChange={(v) => { setQ(v); setPage(1); }} />
+        <p className="mt-2 text-xs text-slate-400">
+          {live ? "Live dari spreadsheet kurator" : "Offline: tampil data lokal"} • {filtered.length} topik
+        </p>
         <div className="mt-4 bg-white rounded-2xl p-2 border border-slate-200 shadow-sm">
           <TopicTable rows={rows} start={start} sortKey={sortKey} sortDir={sortDir} onSort={onSort} />
         </div>
