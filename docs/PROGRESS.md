@@ -1,9 +1,9 @@
 # Website Ide Riset — Progress Log
 
-> Update: 2026-09-21 malam. File ini sumber lanjutan progress. Baca dulu tiap lanjut kerja.
+> Update: 2026-09-23. File ini sumber lanjutan progress. Baca dulu tiap lanjut kerja.
 
 ## Status
-LIVE https://telujakarta-listjudulriset.netlify.app — 3 data, sort + full-bleed tabel.
+LIVE https://telujakarta-listjudulriset.netlify.app — 12 data (8 TAV + 4 KLA).
 PIVOT: database (Supabase) + login PENDING. Sumber data = `src/data/topics.json` manual.
 SOP: user kirim data → append JSON → build → commit → push → Netlify auto redeploy.
 
@@ -14,12 +14,12 @@ SOP: user kirim data → append JSON → build → commit → push → Netlify a
 
 ## Stack
 Vite 5 + React 18 + Tailwind 3 + react-router 6 + supabase-js 2 + xlsx (lib pending).
-Tema merah-putih + slate, logo `public/logo-telkom.png`, footer hanya Telkom University Jakarta.
+Tema merah-putih + slate, logo `public/logo-telkom.png`, footer `@2026 S1 Teknik Telekomunikasi` di /topik + /admin.
 
-## Data (3 baris)
-1. MIMO-GFDM Beyond 5G — AGG — Tersedia (masalah + target 6 poin terisi)
-2. Image Compression with Automatic Denoising — TAV — Tersedia
-3. AI-Based Image Compression Untuk IoT — TAV — Tersedia
+## Data (12 baris, `src/data/topics.json`)
+- TAV (8, Tersedia): Image Compression Denoising, AI Image Compression IoT, Traffic Graph Theory, Point Cloud SR, Obstacle Detection Robot, Monitoring Pertanian, Denoising Comparison, Monitoring Lingkungan IoT.
+- KLA (4): HydroFuture — Penuh, EcoSortX — Tersedia, GlucoWave — Penuh, Telemetri Air-to-Ground — Tersedia.
+- Dihapus: MIMO-GFDM (AGG) atas permintaan user.
 Format: `{judul, latar, masalah, target, kode_dosen, ketersediaan}`. Kosong → `-`.
 
 ## Done
@@ -29,6 +29,10 @@ Format: `{judul, latar, masalah, target, kode_dosen, ketersediaan}`. Kosong → 
 - [x] Search, pagination 10/20/50, sort judul/kode/ketersediaan (klik header, asc→desc→reset)
 - [x] Restyle merah-putih, logo Telkom, login hidden, full-bleed tabel 1600px
 - [x] netlify.toml, supabase no-crash tanpa env, push GitHub, Netlify live 200
+- [x] Footer `@2026 S1 Teknik Telekomunikasi` (/topik + /admin)
+- [x] Security lapis 1: headers + CSP di netlify.toml
+- [x] Security lapis 2: login rate-limit + lockout (`src/lib/rateLimit.js`, unit-test manual via node)
+- [x] `npm test` (scripts/test-excel.mjs) terdaftar di package.json
 
 ## Pending
 1. [ ] DATA: append via chat atau GitHub web edit (template di README)
