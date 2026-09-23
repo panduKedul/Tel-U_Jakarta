@@ -57,6 +57,10 @@ Format: `{judul, latar, masalah, target, kode_dosen, ketersediaan, tanggal}`. Ko
   gviz error/null/kosong → fallback, tak pernah blank; fetch GET tanpa data user;
   sheet publik 200 + CSP live benar. Catatan: editor sheet = kendali isi live
   (batasi editor, jangan ada tab sensitif di file yang sama).
+- [x] Audit ronde 5: histori git bersih (.env tak pernah ke-commit, 50 commit nol secret);
+  TRACE/PUT live balas 405; nol sourcemap produksi; npm audit 3 vuln —
+  react-router open-redirect TAK exploitable (7 target navigasi statis, upgrade v7 ditunda),
+  xlsx high tanpa versi fix di npm (risiko diterima: uploader = admin tepercaya + try/catch).
 
 ## Pending
 1. [ ] DATA: append via chat atau GitHub web edit (template di README)
